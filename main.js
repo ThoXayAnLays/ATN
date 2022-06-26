@@ -31,7 +31,7 @@ app.post('/newProduct', async(req, res) => {
     let name = req.body.txtName
     let price = req.body.txtPrice
     let picture = req.body.txtPicture
-    if (name.length <5) {
+    if (name.length <= 4) {
         res.render('newProduct', {
             'nameError': 'Name must be 5 length characters'
         })
