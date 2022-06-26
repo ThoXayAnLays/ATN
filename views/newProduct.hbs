@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>New Product</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">ATNToys</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">View all Toys</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/insert">Add a new Toy</a>
+                    </li>
+                </ul>
+                <form class="d-flex" action="/search" method="post">
+                    <input class="form-control me-2" type="text" placeholder="Search" name="txtName">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <h1 style="text-align: center;">NEW PRODUCT</h1>
+    <div class="container mt-3">
+        <form action="/newProduct" method="POST">
+            <div class="mb-3 mt-3">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="txtName">
+                <div style="color: red;">{{nameError}}</div>
+            </div>
+            <div class="mb-3">
+                <label for="price">Price:</label>
+                <input type="text" class="form-control" id="price" placeholder="Enter price" name="txtPrice">
+                <div style="color: red;">{{priceError}}</div>
+            </div>
+            <div class="mb-3">
+                <label for="pic">Image URL:</label>
+                <input type="text" class="form-control" id="pic" placeholder="Enter Image URL" name="txtPicture">
+                <div style="color: red;">{{picError}}</div>
+            </div>
+            <input class="btn btn-success" type="submit" value="Add">
+            <input class="btn btn-success" type="button" value="Cancel" onclick="location.href='/';">
+        </form>
+    </div>
+</body>
+
+</html>
